@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yao Cedric Richard N'DRI – Développeur en alternance</title>
+<meta name="description" content="Portfolio de Yao Cedric Richard N'DRI, étudiant en Master 2 Informatique à l'EPSI Paris, à la recherche d'une alternance de développeur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F9FB; --ink:#14213D; --muted:#4F5B70; --line:#D5DCE6;
+  --accent:#1F6F8B; --accent-soft:#E0EEF3; --white:#fff;
+  --display:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --text:"Source Sans 3","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--text)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* Barre de navigation */
+.nav{border-bottom:1px solid var(--line);background:var(--paper)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1rem;padding-bottom:1rem;flex-wrap:wrap}
+.nav strong{font-family:var(--display);font-weight:800;font-size:1.05rem}
+.nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600}
+.nav a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+
+/* Présentation */
+.hero{padding:5rem 0 4rem}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,6.2vw,4.4rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 1.5rem;max-width:16ch}
+.hero p.lead{font-size:1.25rem;max-width:40rem;color:var(--muted);margin:0 0 2rem}
+.hero .who{font-weight:600;margin:0 0 1.2rem;color:var(--accent)}
+.actions{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.35rem;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--white)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn.ghost{color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--white)}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.01em;margin:0 0 .4rem}
+.sub{color:var(--muted);margin:0 0 2.2rem;max-width:38rem}
+
+/* Projets */
+.project{display:grid;grid-template-columns:13rem 1fr;gap:1.5rem;padding:1.6rem 0;border-top:1px solid var(--line)}
+.project:first-of-type{border-top:0;padding-top:0}
+.project h3{font-family:var(--display);font-size:1.3rem;margin:0 0 .2rem}
+.project .kind{color:var(--muted);font-size:.95rem;margin:0}
+.project p{margin:0 0 .8rem;max-width:40rem}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;margin:0 0 .9rem;padding:0}
+.tags li{background:var(--accent-soft);color:var(--ink);padding:.15rem .7rem;border-radius:99px;font-size:.92rem;font-weight:600}
+
+/* Compétences : empilées comme une architecture applicative */
+.stack{border:2px solid var(--ink);border-radius:8px;overflow:hidden;background:var(--white)}
+.layer{display:grid;grid-template-columns:12rem 1fr;border-top:1px solid var(--line)}
+.layer:first-child{border-top:0}
+.layer b{font-family:var(--display);padding:1rem 1.2rem;background:var(--ink);color:var(--white);font-weight:600}
+.layer span{padding:1rem 1.2rem}
+.layer:nth-child(even) b{background:#22345D}
+
+/* Formation */
+.edu{list-style:none;margin:0;padding:0}
+.edu li{padding:1rem 0 1rem 1.2rem;border-left:4px solid var(--accent)}
+.edu li+li{margin-top:.6rem;border-left-color:var(--line)}
+.edu strong{display:block}
+.edu small{color:var(--muted);font-size:.98rem}
+
+/* Contact */
+.contact p{max-width:38rem}
+.links{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.4rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line)}
+
+@media (max-width:40rem){
+  .hero{padding:3rem 0 2.5rem}
+  .project,.layer{grid-template-columns:1fr}
+  .project{gap:.5rem}
+  .layer b{padding:.6rem 1.2rem}
+  .layer span{padding:.8rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <strong>Yao Cedric Richard N'DRI</strong>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#formation">Formation</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="who">Étudiant en Master 2 Informatique, EPSI Paris</p>
+    <h1>Je développe des applications utiles, de la base de données à l'écran.</h1>
+    <p class="lead">Je cherche une alternance de développeur informatique de 12 mois pour apprendre sur des projets concrets et y contribuer dès le premier jour.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projets">Voir mes projets</a>
+      <a class="btn ghost" href="#contact">Me contacter</a>
+    </div>
+  </div>
+
+  <section id="projets">
+    <div class="wrap">
+      <h2>Projets</h2>
+      <p class="sub">Trois réalisations qui montrent comment je passe d'un besoin à une solution qui fonctionne.</p>
+
+      <article class="project">
+        <div>
+          <h3>Application de gestion de stock</h3>
+          <p class="kind">Projet scolaire</p>
+        </div>
+        <div>
+          <p>Application Python avec interface graphique pour suivre les stocks et générer des rapports.</p>
+          <ul class="tags"><li>Python</li><li>Interface graphique</li><li>Rapports</li></ul>
+          <a href="https://github.com/richardcedric436-dev?tab=repositories">Voir le code sur GitHub</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>Site internet personnel</h3>
+          <p class="kind">Projet personnel</p>
+        </div>
+        <div>
+          <p>Site vitrine responsive, qui s'adapte aux écrans d'ordinateur, de tablette et de téléphone.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <a href="https://github.com/richardcedric436-dev?tab=repositories">Voir le code sur GitHub</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>Montage et maintenance PC</h3>
+          <p class="kind">Projet personnel</p>
+        </div>
+        <div>
+          <p>Assemblage complet d'un ordinateur, puis installation du système d'exploitation.</p>
+          <ul class="tags"><li>Matériel</li><li>Système d'exploitation</li><li>Maintenance</li></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="competences">
+    <div class="wrap">
+      <h2>Compétences</h2>
+      <p class="sub">Les couches d'une application, de ce que voit l'utilisateur jusqu'au déploiement.</p>
+      <div class="stack" role="list">
+        <div class="layer" role="listitem"><b>Interface</b><span>HTML, CSS, JavaScript, WordPress</span></div>
+        <div class="layer" role="listitem"><b>Logique métier</b><span>Python, PHP</span></div>
+        <div class="layer" role="listitem"><b>Données</b><span>MySQL, SQLite, Pandas, Power BI, Tableau</span></div>
+        <div class="layer" role="listitem"><b>Déploiement</b><span>Docker, Jenkins, Azure</span></div>
+        <div class="layer" role="listitem"><b>Outils et systèmes</b><span>Git / GitHub, VS Code, Linux, Cisco Packet Tracer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formation">
+    <div class="wrap">
+      <h2>Formation</h2>
+      <p class="sub">Un cursus orienté développement, avec une veille régulière sur la cybersécurité et les nouvelles technologies.</p>
+      <ul class="edu">
+        <li><strong>Master 2 – Expert en Informatique et Systèmes d'Information, option Développeur</strong><small>EPSI Paris · depuis septembre 2026</small></li>
+        <li><strong>Master 1 – Expert en Informatique et Systèmes d'Information</strong><small>EPSI Paris · 2025–2026 · validé</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Travaillons ensemble</h2>
+      <p>Je suis disponible pour une alternance de 12 mois comme développeur informatique. Écrivez-moi, je réponds rapidement.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:richardcedric436@gmail.com">Envoyer un e-mail</a>
+        <a class="btn ghost" href="https://github.com/richardcedric436-dev">Mon GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Yao Cedric Richard N'DRI · Pontoise, France</div>
+</footer>
+
+</body>
+</html>
